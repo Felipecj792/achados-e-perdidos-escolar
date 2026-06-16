@@ -1,451 +1,1040 @@
-/* ============================================
-   ACHADOS & PERDIDOS - ESTILOS PRINCIPAIS
-   ============================================ */
-
-/* Reset e variáveis */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --azul-principal: #1F497D;
-    --azul-claro: #DEEAF1;
-    --amarelo-destaque: #F5C518;
-    --branco: #FFFFFF;
-    --cinza-texto: #4A4A4A;
-    --cinza-borda: #ddd;
-    --verde-sucesso: #28a745;
-    --laranja-alerta: #ff9800;
-    --vermelho-erro: #dc3545;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f7fc;
-    color: var(--cinza-texto);
-    line-height: 1.5;
-}
-
-/* ========== HEADER ========== */
-.header {
-    background-color: var(--azul-principal);
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo h1 {
-    font-size: 1.6rem;
-    font-weight: 700;
-}
-
-.logo p {
-    font-size: 0.8rem;
-    opacity: 0.9;
-}
-
-.nav-menu a {
-    color: white;
-    margin-left: 1.5rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.2s;
-}
-
-.nav-menu a:hover {
-    color: var(--amarelo-destaque);
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.user-info span {
-    font-size: 0.9rem;
-}
-
-.btn-sair {
-    background: none;
-    border: 1px solid white;
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: inherit;
-    transition: 0.2s;
-}
-
-.btn-sair:hover {
-    background: var(--amarelo-destaque);
-    color: var(--azul-principal);
-    border-color: var(--amarelo-destaque);
-}
-
-/* ========== CONTAINER ========== */
-.container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-    min-height: 60vh;
-}
-
-/* ========== CARDS ========== */
-.card {
-    background: var(--branco);
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-/* ========== FORMULÁRIOS ========== */
-.form-group {
-    margin-bottom: 1rem;
-}
-
-label {
-    font-weight: 500;
-    display: block;
-    margin-bottom: 0.3rem;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 0.7rem;
-    border: 1px solid var(--cinza-borda);
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: 0.2s;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--azul-principal);
-    box-shadow: 0 0 0 3px rgba(31, 73, 125, 0.1);
-}
-
-/* ========== BOTÕES ========== */
-button, .btn {
-    background-color: var(--azul-principal);
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: inherit;
-    transition: 0.2s;
-}
-
-button:hover, .btn:hover {
-    background-color: #0e3a5f;
-    transform: scale(0.98);
-}
-
-.btn-destaque {
-    background-color: var(--amarelo-destaque);
-    color: var(--azul-principal);
-}
-
-.btn-destaque:hover {
-    background-color: #e0b010;
-}
-
-.btn-sucesso {
-    background-color: var(--verde-sucesso);
-}
-
-.btn-sucesso:hover {
-    background-color: #218838;
-}
-
-.btn-alerta {
-    background-color: var(--laranja-alerta);
-}
-
-.btn-perigo {
-    background-color: var(--vermelho-erro);
-}
-
-.btn-perigo:hover {
-    background-color: #c82333;
-}
-
-.btn-grande {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-}
-
-/* ========== GRID DE CARDS ========== */
-.grid-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.objeto-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease;
-}
-
-.objeto-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.card-img {
-    height: 160px;
-    background-color: var(--azul-claro);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--azul-principal);
-    font-size: 3rem;
-    overflow: hidden;
-}
-
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card-info {
-    padding: 1rem;
-}
-
-.card-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--azul-principal);
-}
-
-/* ========== STATUS ========== */
-.status {
-    display: inline-block;
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    margin-top: 0.5rem;
-}
-
-.status-disponivel {
-    background: #e0f2e0;
-    color: #2e7d32;
-}
-
-.status-devolvido {
-    background: #f0f0f0;
-    color: #777;
-}
-
-.categoria-badge {
-    display: inline-block;
-    background: var(--azul-claro);
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    margin: 0.3rem 0;
-}
-
-/* ========== FILTROS ========== */
-.filtros {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    background: white;
-    padding: 1rem;
-    border-radius: 20px;
-    align-items: center;
-}
-
-.filtros input, .filtros select {
-    width: auto;
-    min-width: 150px;
-}
-
-/* ========== MENSAGENS ========== */
-.mensagem {
-    padding: 0.8rem;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-}
-
-.sucesso {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.erro {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-.alerta {
-    background: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeeba;
-}
-
-/* ========== HERO SECTION ========== */
-.hero-section {
-    background: linear-gradient(135deg, var(--azul-principal) 0%, #2c5a8c 100%);
-    color: white;
-    padding: 2.5rem;
-    border-radius: 20px;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.hero-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-}
-
-/* ========== BOTÃO FLUTUANTE ========== */
-.btn-flutuante {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: var(--amarelo-destaque);
-    color: var(--azul-principal);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: 0.3s;
-    z-index: 1000;
-}
-
-.btn-flutuante:hover {
-    transform: scale(1.1);
-    background-color: #e0b010;
-}
-
-/* ========== TABELAS ========== */
-.table-container {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid var(--cinza-borda);
-}
-
-th {
-    background-color: var(--azul-principal);
-    color: white;
-}
-
-tr:hover {
-    background-color: var(--azul-claro);
-}
-
-/* ========== ESTATÍSTICAS ========== */
-.stats-grid {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-}
-
-.stat-card {
-    background: #e3f2fd;
-    padding: 1rem;
-    border-radius: 12px;
-    flex: 1;
-    text-align: center;
-}
-
-.stat-card h3 {
-    font-size: 2rem;
-    color: var(--azul-principal);
-}
-
-/* ========== FOOTER ========== */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: var(--azul-principal);
-    color: white;
-    margin-top: 3rem;
-    font-size: 0.9rem;
-}
-
-/* ========== RESPONSIVIDADE ========== */
-@media (max-width: 700px) {
-    .header {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achados & Perdidos - Escola</title>
     
-    .nav-menu a {
-        margin: 0 0.8rem;
-    }
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    .hero-section h2 {
-        font-size: 1.5rem;
-    }
-    
-    .filtros input, .filtros select {
-        width: 100%;
-    }
-    
-    .btn-flutuante {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-    }
-}
+    <style>
+        /* ========== RESET E BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-@media (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
-    }
-    
-    .card {
-        padding: 1rem;
-    }
-    
-    .hero-buttons .btn {
-        width: 100%;
-    }
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: linear-gradient(135deg, #1F497D, #2a6bb0);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+        }
+
+        .logo i {
+            color: #F5C518;
+            font-size: 2rem;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        nav a.active {
+            background: white;
+            color: #1F497D;
+            font-weight: 600;
+        }
+
+        nav a#btn-logout:hover {
+            background: #dc3545;
+            color: white;
+        }
+
+        /* ========== MAIN ========== */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        /* ========== CARDS E CONTAINERS ========== */
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        .card h2, .card h3 {
+            color: #1F497D;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 i, .card h3 i {
+            color: #F5C518;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero-section {
+            background: linear-gradient(135deg, #1F497D, #2a6bb0);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-section h2 i {
+            color: #F5C518;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ========== BOTÕES ========== */
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn-destaque {
+            background: #F5C518;
+            color: #1F497D;
+        }
+
+        .btn-destaque:hover {
+            background: #e6b800;
+        }
+
+        .btn-grande {
+            padding: 14px 36px;
+            font-size: 1.1rem;
+        }
+
+        .btn-sucesso {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-sucesso:hover {
+            background: #218838;
+        }
+
+        .btn-perigo {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-perigo:hover {
+            background: #c82333;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* ========== FORMULÁRIOS ========== */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1F497D;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #e0e6ed;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #1F497D;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(31, 73, 125, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* ========== GRID DE CARDS (OBJETOS) ========== */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 1rem;
+        }
+
+        .objeto-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .objeto-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+
+        .card-img {
+            height: 160px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-img i {
+            color: #c0c8d4;
+            opacity: 0.6;
+        }
+
+        .card-info {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-info h3 {
+            font-size: 1.1rem;
+            margin: 0 0 8px 0;
+            color: #1F497D;
+        }
+
+        .card-info p {
+            margin: 3px 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .card-info .categoria-badge {
+            display: inline-block;
+            background: #eef2f7;
+            color: #1F497D;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            align-self: flex-start;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 6px;
+            align-self: flex-start;
+        }
+
+        .status-disponivel {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-devolvido {
+            background: #e2e3e5;
+            color: #383d41;
+        }
+
+        /* ========== FILTROS ========== */
+        .filtros {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 1rem 0 1.5rem;
+            padding: 1.2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            align-items: center;
+        }
+
+        .filtros input,
+        .filtros select {
+            padding: 8px 14px;
+            border: 2px solid #e0e6ed;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            flex: 1;
+            min-width: 150px;
+            transition: all 0.3s;
+        }
+
+        .filtros input:focus,
+        .filtros select:focus {
+            border-color: #1F497D;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(31, 73, 125, 0.1);
+        }
+
+        /* ========== ESTATÍSTICAS ========== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1F497D, #2a6bb0);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.03);
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: white;
+        }
+
+        .stat-card p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* ========== TABELAS ========== */
+        .table-container {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        table th {
+            background: #1F497D;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        table tr:hover {
+            background: #f8f9fa;
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ========== MENSAGENS ========== */
+        .msg-sucesso {
+            background: #d4edda;
+            color: #155724;
+            padding: 14px 18px;
+            border-radius: 10px;
+            border-left: 5px solid #28a745;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+
+        .msg-erro {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 14px 18px;
+            border-radius: 10px;
+            border-left: 5px solid #dc3545;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+
+        /* ========== MODAL ========== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            overflow-y: auto;
+            animation: modalFade 0.3s ease;
+        }
+
+        @keyframes modalFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 2.5rem;
+            max-width: 600px;
+            border-radius: 16px;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .modal .detalhes-info p {
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .modal .detalhes-info p:last-child {
+            border-bottom: none;
+        }
+
+        .modal .detalhes-info strong {
+            color: #1F497D;
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #1F497D;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ========== RESPONSIVIDADE ========== */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            nav {
+                justify-content: center;
+            }
+            
+            .hero-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 0 12px;
+                margin: 1rem auto;
+            }
+            
+            .card {
+                padding: 1.2rem;
+            }
+            
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+            
+            .hero-section h2 {
+                font-size: 1.4rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn-grande {
+                padding: 12px 20px;
+                font-size: 1rem;
+                justify-content: center;
+            }
+            
+            .filtros {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filtros input,
+            .filtros select {
+                min-width: auto;
+            }
+            
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            nav a {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+            
+            .modal-content {
+                margin: 10% 10px;
+                padding: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            table {
+                font-size: 0.8rem;
+            }
+            
+            table th, table td {
+                padding: 8px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+            
+            .logo i {
+                font-size: 1.5rem;
+            }
+            
+            nav a {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+            }
+            
+            .card h2, .card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                padding: 1rem;
+            }
+        }
+
+        /* ========== SCROLLBAR PERSONALIZADA ========== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1F497D;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2a6bb0;
+        }
+
+        /* ========== UTILITÁRIOS ========== */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-1 { margin-top: 1rem; }
+        .mb-1 { margin-bottom: 1rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app"></div>
+
+    <script>
+        /* ============================================
+           ACHADOS & PERDIDOS - LÓGICA PRINCIPAL
+           ============================================ */
+
+        // ========== CONSTANTES E CONFIGURAÇÕES ==========
+        const STORAGE_USERS = "achados_usuarios";
+        const STORAGE_OBJETOS = "achados_objetos";
+        const STORAGE_SESSION = "achados_session";
+
+        let currentPage = "home";
+
+        // ========== INICIALIZAÇÃO DOS DADOS ==========
+        function initData() {
+            let users = localStorage.getItem(STORAGE_USERS);
+            if (!users) {
+                const admin = {
+                    id: "1",
+                    nome: "Secretaria Escola",
+                    email: "admin@escola.com",
+                    senha: "admin123",
+                    tipo: "admin"
+                };
+                const aluno = {
+                    id: "2",
+                    nome: "Ana Aluno",
+                    email: "ana@email.com",
+                    senha: "123456",
+                    tipo: "comum"
+                };
+                const aluno2 = {
+                    id: "3",
+                    nome: "Carlos Silva",
+                    email: "carlos@email.com",
+                    senha: "123456",
+                    tipo: "comum"
+                };
+                localStorage.setItem(STORAGE_USERS, JSON.stringify([admin, aluno, aluno2]));
+            }
+            
+            let objetos = localStorage.getItem(STORAGE_OBJETOS);
+            if (!objetos) {
+                const exemplos = [
+                    { 
+                        id: "obj1", 
+                        titulo: "Mochila preta Nike", 
+                        descricao: "Mochila preta com cadernos e estojo", 
+                        categoria: "Mochila", 
+                        localEncontrado: "Pátio coberto", 
+                        dataEncontrado: "2025-06-10", 
+                        fotoUrl: "", 
+                        status: "disponivel", 
+                        usuario_id: "1", 
+                        dataRegistro: "2025-06-10", 
+                        contato: "Secretaria" 
+                    },
+                    { 
+                        id: "obj2", 
+                        titulo: "Carregador USB-C", 
+                        descricao: "Carregador branco da Samsung", 
+                        categoria: "Eletrônicos", 
+                        localEncontrado: "Laboratório de informática", 
+                        dataEncontrado: "2025-06-12", 
+                        fotoUrl: "", 
+                        status: "disponivel", 
+                        usuario_id: "2", 
+                        dataRegistro: "2025-06-12", 
+                        contato: "Ana - Sala 23" 
+                    },
+                    { 
+                        id: "obj3", 
+                        titulo: "Óculos de grau", 
+                        descricao: "Óculos armação preta, grau leve", 
+                        categoria: "Óculos", 
+                        localEncontrado: "Biblioteca", 
+                        dataEncontrado: "2025-06-14", 
+                        fotoUrl: "", 
+                        status: "disponivel", 
+                        usuario_id: "3", 
+                        dataRegistro: "2025-06-14", 
+                        contato: "Carlos" 
+                    }
+                ];
+                localStorage.setItem(STORAGE_OBJETOS, JSON.stringify(exemplos));
+            }
+        }
+
+        // ========== FUNÇÕES DE USUÁRIO ==========
+        function getCurrentUser() {
+            const email = localStorage.getItem(STORAGE_SESSION);
+            if (!email) return null;
+            const users = JSON.parse(localStorage.getItem(STORAGE_USERS)) || [];
+            return users.find(u => u.email === email) || null;
+        }
+
+        function setSessionUser(email) {
+            if (email) localStorage.setItem(STORAGE_SESSION, email);
+            else localStorage.removeItem(STORAGE_SESSION);
+        }
+
+        // ========== FUNÇÕES DE OBJETOS ==========
+        function getObjetos() {
+            return JSON.parse(localStorage.getItem(STORAGE_OBJETOS)) || [];
+        }
+
+        function saveObjetos(objetos) {
+            localStorage.setItem(STORAGE_OBJETOS, JSON.stringify(objetos));
+        }
+
+        function addObjeto(obj) {
+            const objetos = getObjetos();
+            obj.id = Date.now().toString();
+            objetos.push(obj);
+            saveObjetos(objetos);
+            return obj;
+        }
+
+        function updateObjeto(id, novosDados) {
+            let objetos = getObjetos();
+            const index = objetos.findIndex(o => o.id === id);
+            if (index !== -1) {
+                objetos[index] = { ...objetos[index], ...novosDados };
+                saveObjetos(objetos);
+                return true;
+            }
+            return false;
+        }
+
+        function deleteObjeto(id) {
+            let objetos = getObjetos();
+            objetos = objetos.filter(o => o.id !== id);
+            saveObjetos(objetos);
+        }
+
+        // ========== FUNÇÕES AUXILIARES ==========
+        function escapeHtml(str) {
+            if (!str) return '';
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return str.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+
+        function formatarData(data) {
+            if (!data) return '';
+            const partes = data.split('-');
+            if (partes.length === 3) {
+                return `${partes[2]}/${partes[1]}/${partes[0]}`;
+            }
+            return data;
+        }
+
+        // ========== RENDERIZAÇÃO DE CARDS ==========
+        function renderCard(obj, showActions = false, currentUser = null) {
+            const fotoHtml = obj.fotoUrl ? 
+                `<img src="${obj.fotoUrl}" alt="${escapeHtml(obj.titulo)}" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\\'fas fa-box-open fa-3x\\'></i>'">` : 
+                '<i class="fas fa-box-open fa-3x"></i>';
+            
+            return `
+                <div class="objeto-card">
+                    <div class="card-img">
+                        ${fotoHtml}
+                    </div>
+                    <div class="card-info">
+                        <h3>${escapeHtml(obj.titulo)}</h3>
+                        <div class="categoria-badge"><i class="fas fa-tag"></i> ${escapeHtml(obj.categoria)}</div>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Local:</strong> ${escapeHtml(obj.localEncontrado)}</p>
+                        <p><i class="far fa-calendar-alt"></i> <strong>Data:</strong> ${formatarData(obj.dataEncontrado)}</p>
+                        <p><small>${obj.descricao ? escapeHtml(obj.descricao.substring(0, 80)) + (obj.descricao.length > 80 ? '...' : '') : ''}</small></p>
+                        <span class="status ${obj.status === 'disponivel' ? 'status-disponivel' : 'status-devolvido'}">
+                            ${obj.status === 'disponivel' ? '<i class="fas fa-check-circle"></i> Disponível' : '<i class="fas fa-check-double"></i> Já retirado'}
+                        </span>
+                        <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:5px;">
+                            <button class="btn-detalhe" data-id="${obj.id}" style="background:#eef; color:#1F497D; padding:5px 12px; border:none; border-radius:6px; cursor:pointer; font-size:0.85rem;">
+                                <i class="fas fa-eye"></i> Ver detalhes
+                            </button>
+                            ${showActions && obj.status === 'disponivel' ? `<button class="btn-reivindicar" data-id="${obj.id}" style="background:#F5C518; color:#1F497D; padding:5px 12px; border:none; border-radius:6px; cursor:pointer; font-size:0.85rem;">
+                                <i class="fas fa-hand-holding-heart"></i> É meu!
+                            </button>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ========== PÁGINAS ==========
+        function renderHome() {
+            const user = getCurrentUser();
+            const objetos = getObjetos().filter(o => o.status === "disponivel").slice(0, 6);
+            
+            return `
+                <div class="hero-section">
+                    <h2><i class="fas fa-search-location"></i> Perdeu algum objeto? Encontrou algo?</h2>
+                    <p>O Achados & Perdidos da escola ajuda você a encontrar seus pertences e devolver o que achou!</p>
+                    <div class="hero-buttons">
+                        ${!user ? '<a href="#" id="hero-login" class="btn btn-grande" style="background:white; color:#1F497D;"><i class="fas fa-sign-in-alt"></i> Login para cadastrar</a>' : ''}
+                        <a href="#" id="hero-cadastrar" class="btn btn-grande btn-destaque"><i class="fas fa-plus-circle"></i> ${user ? 'Cadastrar Item Encontrado' : 'Cadastre-se Grátis'}</a>
+                        <a href="#" id="hero-buscar" class="btn btn-grande" style="background:rgba(255,255,255,0.2);"><i class="fas fa-search"></i> Buscar Itens</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-clock"></i> Últimos objetos encontrados</h3>
+                    <div class="grid-cards" id="ultimos-objetos">
+                        ${objetos.map(obj => renderCard(obj, !!user, user)).join('')}
+                        ${objetos.length === 0 ? '<p style="text-align:center; padding:20px;">Nenhum objeto cadastrado ainda. <a href="#" id="empty-cadastrar" style="color:#1F497D; font-weight:600;">Seja o primeiro a cadastrar!</a></p>' : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderRegistrar() {
+            const user = getCurrentUser();
+            if (!user) return renderLogin();
+            
+            const today = new Date().toISOString().split('T')[0];
+            
+            return `
+                <div class="card">
+                    <h2><i class="fas fa-camera"></i> Cadastrar Item Encontrado</h2>
+                    <p style="margin-bottom:1rem; color:#666;">Você encontrou algum objeto na escola? Cadastre aqui para ajudar o dono a recuperar!</p>
+                    <form id="formRegistro">
+                        <div class="form-group">
+                            <label><i class="fas fa-tag"></i> Nome do objeto*</label>
+                            <input type="text" id="titulo" placeholder="Ex: Estojo azul, Chaveiro do Homem-Aranha" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-list"></i> Categoria*</label>
+                            <select id="categoria" required>
+                                <option value="">Selecione...</option>
+                                <option>Mochila</option>
+                                <option>Eletrônicos</option>
+                                <option>Documentos</option>
+                                <option>Chaveiro</option>
+                                <option>Óculos</option>
+                                <option>Roupas</option>
+                                <option>Livros</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-map-marker-alt"></i> Local onde foi encontrado*</label>
+                            <input id="local" placeholder="Ex: Sala 12, Pátio, Quadra" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="far fa-calendar-alt"></i> Data que foi encontrado*</label>
+                            <input type="date" id="data" value="${today}" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-align-left"></i> Descrição detalhada</label>
+                            <textarea id="descricao" rows="3" placeholder="Cor, marca, detalhes que ajudem a identificar..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-image"></i> Foto do objeto (URL ou deixe em branco)</label>
+                            <input id="fotoUrl" placeholder="https://exemplo.com/foto.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Como o dono pode te contatar? (opcional)</label>
+                            <input id="contato" placeholder="Sala, telefone, e-mail...">
+                        </div>
+                        <button type="submit" class="btn btn-sucesso"><i class="fas fa-save"></i> Cadastrar Item Encontrado</button>
+                    </form>
+                    <div id="msgRegistro"></div>
+                </div>
+            `;
+        }
+
+        function renderBuscar() {
+            const user = getCurrentUser();
+            const objetos = getObjetos().filter(o => o.status === "disponivel");
+            
+            return `
+                <div class="card">
+                    <h2><i class="fas fa-search"></i> Buscar Objetos Perdidos</h2>
+                    <p>Encontre seu objeto perdido ou veja o que foi achado na escola!</p>
+                    <div class="filtros">
+                        <input type="text" id="filtroTexto" placeholder="Palavra-chave" style="flex:2;">
+                        <select id="filtroCategoria" style="flex:1;">
+                            <option value="">Todas categorias</option>
+                            <option>Mochila</option>
+                            <option>Eletrônicos</option>
+                            <option>Documentos</option>
+                            <option>Chaveiro</option>
+                            <option>Óculos</option>
+                            <option>Roupas</option>
+                            <option>Livros</option>
+                        </select>
+                        <input type="text" id="filtroLocal" placeholder="Local" style="flex:1;">
+                        <button id="btnFiltrar" class="btn btn-destaque"><i class="fas fa-filter"></i> Filtrar</button>
+                        <button id="btnLimparFiltros" class="btn" style="background:#6c757d; color:white;"><i class="fas fa-times"></i> Limpar</button>
+                    </div>
+                    <div id="resultadosBusca" class="grid-cards">
+                        ${objetos.map(obj => renderCard(obj, !!user, user)).join('')}
+                        ${objetos.length === 0 ? '<p style="text-align:center; padding:20px;">Nenhum objeto disponível no momento.</p>' : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderMeusItens() {
+            const user = getCurrentUser();
+            if (!user) return '<div class="card"><p>Faça login para ver seus itens.</p></div>';
+            
+            const meusObjetos = getObjetos().filter(obj => obj.usuario_id === user.id);
+            
+            return `
+                <div class="card">
+                    <h2><i class="fas fa-boxes"></i> Meus Itens Cadastrados</h2>
+                    <p>Itens que você encontrou e cadastrou no sistema.</p>
+                    ${meusObjetos.length === 0 ? 
+                        '<p style="text-align:center; padding:20px;">Você ainda não cadastrou nenhum objeto. <a href="#" id="cadastrar-agora" style="color:#1F497D; font-weight:600;">Clique aqui para cadastrar</a></p>' : 
+                        `<div class="grid-cards">
+                            ${meusObjetos.map(obj => `
+                                <div class="objeto-card">
+                                    <div class="card-img">
+                                        ${obj.fotoUrl ? `<img src="${obj.fotoUrl}" alt="${escapeHtml(obj.titulo)}" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\\'fas fa-box-open fa-3x\\'></i>'">` : '<i class="fas fa-box-open fa-3x"></i>'}
+                                    </div>
+                                    <div class="card-info
