@@ -12,30 +12,37 @@
 </head>
 <body>
 
-<div class="header">
-    <div class="logo">
-        <h1><i class="fas fa-search"></i> Achados & Perdidos</h1>
-        <p>Escola Estadual Armando Barbosa Quitiba</p>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="logo">
+            <h1><i class="fas fa-search"></i> Achados & Perdidos</h1>
+            <p>Escola Estadual Armando Barbosa Quitiba</p>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+            <!-- Links dinâmicos via JavaScript -->
+        </nav>
+    </header>
+
+    <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+    <main class="container" id="appContainer">
+        <!-- Conteúdo renderizado dinamicamente pelo JavaScript -->
+    </main>
+
+    <!-- ========== BOTÃO FLUTUANTE ========== -->
+    <div id="btnFlutuante" class="btn-flutuante" style="display: none;" aria-label="Cadastrar novo item">
+        <i class="fas fa-plus"></i>
     </div>
-    <div class="nav-menu" id="navMenu">
-        <!-- links dinâmicos via js -->
-    </div>
-</div>
 
-<div class="container" id="appContainer">
-    <!-- Conteúdo renderizado dinamicamente -->
-</div>
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>
+            <i class="fas fa-hand-holding-heart"></i> 
+            Sistema de Controle de Objetos Perdidos e Encontrados 
+            | Design responsivo | Ajude a devolver objetos aos donos!
+        </p>
+    </footer>
 
-<!-- Botão flutuante para registrar item (visível apenas logado) -->
-<div id="btnFlutuante" class="btn-flutuante" style="display: none;">
-    <i class="fas fa-plus"></i>
-</div>
-
-<footer>
-    <p><i class="fas fa-hand-holding-heart"></i> Sistema de Controle de Objetos Perdidos e Encontrados | Design responsivo | Ajude a devolver objetos aos donos!</p>
-</footer>
-
-<!-- JavaScript do projeto -->
-<script src="script.js"></script>
+    <!-- ========== JAVASCRIPT ========== -->
+    <script src="script.js"></script>
 </body>
 </html>
